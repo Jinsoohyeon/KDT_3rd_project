@@ -1,0 +1,15 @@
+artifact_uri: ./mlruns/0/ba23a177e0214f8a8a6ffe24f235cafc/artifacts
+end_time: 1657565783381
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: ba23a177e0214f8a8a6ffe24f235cafc
+run_uuid: ba23a177e0214f8a8a6ffe24f235cafc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1657565768519
+status: 3
+tags: []
+user_id: madda

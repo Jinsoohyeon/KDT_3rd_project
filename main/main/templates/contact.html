@@ -1,0 +1,148 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>visit gangwon</title>
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
+
+        <!-- about_part -->    
+        <link rel="stylesheet" href="{% static 'css/about_animate.css'%}">
+        <link rel="stylesheet" href="{% static 'css/about.css'%}">
+
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav" style="flex:none;">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="{% url 'main:index' %}">Travearch</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'main:index' %}">home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'main:about' %}">news</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'main:post' %}">recommend</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'main:contact' %}">about</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url({% static 'img/about-bg.jpg' %})">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading" >
+                            <h1 style="color:white; font-size: 5rem; font-weight:700;">About Us</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <section class="ftco-section">
+                <div class="container">
+                    <div class="row d-md-flex">
+                        <div class="col-md-6 ftco-animate img about-image" style="background-image: url({% static 'img/bg-post.jpg' %}); background-size: cover;">
+                        </div>
+                        <div class="col-md-6 ftco-animate p-md-5">
+                            <div class="row">
+                          <div class="col-md-12 nav-link-wrap mb-5">
+                            <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                              <a class="nav-link active" id="v-pills-whatwedo-tab" data-toggle="pill" href="#v-pills-whatwedo" role="tab" aria-controls="v-pills-whatwedo" aria-selected="true" style="background-Color:gray;">팀원소개</a>
+        
+                              <a class="nav-link" id="v-pills-mission-tab" data-toggle="pill" href="#v-pills-mission" role="tab" aria-controls="v-pills-mission" aria-selected="false" style="background-Color:gray;">추진배경</a>
+        
+                              <a class="nav-link" id="v-pills-goal-tab" data-toggle="pill" href="#v-pills-goal" role="tab" aria-controls="v-pills-goal" aria-selected="false" style="background-Color:gray;">서비스</a>
+                            </div>
+                          </div>
+                          <div class="col-md-12 d-flex align-items-center">
+                            
+                            <div class="tab-content ftco-animate" id="v-pills-tabContent">
+        
+                              <div class="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel" aria-labelledby="v-pills-whatwedo-tab">
+                                  <div>
+                                    
+                                    <p><h3>한호</h3><h6 class="mb-5">데이터 분석, ML 모델 제작</h6></p>
+                                    <p><h3>진수현</h3><h6 class="mb-5">DB, 서버관리</h6></p>
+                                    <p><h3>왕경훈</h3><h6 class="mb-5">웹 페이지/UI</h6></p>
+                                    </div>
+                              </div>
+        
+                              <div class="tab-pane fade" id="v-pills-mission" role="tabpanel" aria-labelledby="v-pills-mission-tab">
+                                <div>
+                                    <h2 class="mb-4">개요</h2>
+                                      <p >지난 2년간 코로나 시국으로 인해 국내여행 횟수가 감소했고
+                                        코로나로 인한 사회적 거리두기 해제 이후 2022년 첫 여름으로 
+                                        휴가를 떠나는 여행객이 증가할것으로 예상됩니다. 
+                                    <p >또한, 코로나 19이후 재방문 지역 1순위가 강원도라는 점과 리뷰의 중요성이 점점 증가하고 있다는 점을
+                                        고려해 "리뷰를 통한 강원도 관광지 추천" 이라는 서비스를 개발 하게되었습니다. 
+                                        </p>
+                                    
+                                    </div>
+                              </div>
+        
+                              <div class="tab-pane fade" id="v-pills-goal" role="tabpanel" aria-labelledby="v-pills-goal-tab">
+                                <div>
+                                    <h2 class="mb-4">리뷰분석을 통한 강원도 관광지 추천</h2>
+                                      <p>관광사이트 리뷰분석을 통해 최적의 관광지 추천 서비스를 제공하고 있습니다. 사용자가 키워드를 선택해 관광지 추천을 받을 수 있고 최신 여행지 정보도 제공하고 있습니다.</p>
+                                    
+                                    </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2022</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'js/scripts.js'%}"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        
+        <!-- about_part -->
+        {% static 'js/scripts.js'%}
+        <script src="{% static 'js/about/jquery.min.js'%}"></script>
+        <script src="{% static 'js/about/jquery-migrate-3.0.1.min.js'%}"></script>  
+        <script src="{% static 'js/about/bootstrap.min.js'%}"></script> 
+        <script src="{% static 'js/about/jquery.waypoints.min.js'%}"></script>
+        <script src="{% static 'js/about/jquery.stellar.min.js'%}"></script>
+        <script src="{% static 'js/about/owl.carousel.min.js'%}"></script> 
+        <script src="{% static 'js/about/aos.js'%}"></script>
+        <script src="{% static 'js/about/scrollax.min.js'%}"></script>
+        <script src="{% static 'js/about/main.js'%}"></script>
+
+
+    </body>
+</html>

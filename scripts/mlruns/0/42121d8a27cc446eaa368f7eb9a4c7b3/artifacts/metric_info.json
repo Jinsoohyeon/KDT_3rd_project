@@ -1,0 +1,4 @@
+{
+  "GridSearchCV_score_X_test": "GridSearchCV.score(X=X_test, y=y_test)",
+  "f1_score_X_test": "f1_score(y_true=y_test, y_pred=X_pred, average='micro')"
+}

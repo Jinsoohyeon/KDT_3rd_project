@@ -1,0 +1,245 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>visit gangwon</title>
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
+
+        <!-- select_box -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="{% static 'css/select_box1.css'%}">
+        
+        <link rel="stylesheet" href="{% static 'css/s_jquery.multiselect.css'%}">
+        
+        <link rel="stylesheet" href="{% static 'css/s_bootstrap.min.css'%}">
+        
+        <link rel="stylesheet" href="{% static 'css/select_box2.css'%}">
+
+        <!-- chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+        
+        
+        
+        
+
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="{% url 'main:index' %}">Travearch</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'main:index' %}">home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'main:about' %}">news</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'main:post' %}">recommend</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'main:contact' %}">about</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url({% static 'img/about-bg.jpg' %})">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1 style="font-size: 5rem; font-weight:700;">Recommend</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="content" style="padding: 0.5rem 2rem 2rem;">
+
+            <div class="row" style="margin-top:20px; margin-bottom:10px;">
+                <div class="col-12 d-flex">
+                    <div class="card flex-fill">
+                        <div class="card-header">
+
+                            <h5 class="card-title mb-0">키워드 선택</h5>
+                        </div>
+                    <form action="" method = "post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <table class="table my-0">
+                            <div class="content">
+                                <h2 class="text-center">키워드 선택하기</h2>
+                                <div class="container text-left">
+                                  <div class="row justify-content-center">
+                                    <div class="col-md-5" style="max-width:80%; flex:none;">
+                            
+                                        
+                                      
+                                        <select name="basic[]" multiple="multiple" class="3col active form-control">
+                                            {% for word in word_dict %}
+                                                <option id ="loc" value="{{ word }}" name = "loc">{{ word }}</option>
+                                            {% endfor %}
+                                        </select>
+    
+                                
+
+
+                                
+                                
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            
+
+                            <div class="row mt-5 mx-0" >
+                                <div class="col d-grid mt-6 ">
+                                    <button class="btn btn-secondary fs-5" type="submit" onclick="location.href='{% url 'main:about' %}';">관광지 추천받기</button>
+                                </div>
+                                
+                            </div>
+
+                        
+                        </table>
+                    </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mx-2 fs-3 fw-bold">관광지 키워드 정보</div>
+
+            <div class="row">
+                <div class="col d-flex">
+                    <div class="card flex-fill w-100">
+                        <div class="card-header">
+
+                            <h5 class="card-title mb-0">키워드별 리뷰수</h5>
+                        </div>
+                        <div class="card-body d-flex">
+                            <div class="align-self-center w-100">
+
+
+                                <table class="table mb-0">
+                                    <div class="card">
+                                        <div class="card-body">
+                                              <h4 class="card-title"></h4>
+                                              <div><canvas id="myChart"></canvas></div>
+                                        </div>
+                                    </div>
+                                    
+
+                                
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col d-flex">
+                    <div class="card flex-fill">
+                        <div class="card-header">
+
+                            <h5 class="card-title mb-0">단어 빈도수</h5>
+                        </div>
+                        <div class="card-body d-flex">
+                            <div class="align-self-center w-100">
+                                <table class="table mb-0">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title"></h4>
+                                            <div><canvas id="bar-chart"></canvas></div>
+                                        </div>
+                                    </div>
+                                    
+
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+
+
+
+            <div class="col d-flex">
+                <div class="card flex-fill">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">실시간 사용자 입력 단어 순위</h5>
+                    </div>
+                    <div><canvas id="wordcnt-chart"></canvas></div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+        </main>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2022</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+
+
+
+
+        
+        
+        <!-- Core theme JS-->
+        <script src="{% static 'js/scripts.js'%}"></script>
+
+        <!-- select_box -->
+        <script src="{% static 'js/s_jquery-3.3.1.min.js'%}"></script>
+        <script src="{% static 'js/s_popper.min.js'%}"></script>
+        <script src="{% static 'js/s_bootstrap.min.js'%}"></script>
+        <script src="{% static 'js/s_jquery.multiselect.js'%}"></script>
+        <script src="{% static 'js/s_main.js'%}"></script>     
+        
+        
+        <!-- chart.js (키워드 순위)-->
+
+        
+
+        <!-- 단어 빈도수 -->
+        <script>
+            const labels = [{% for name in names %} '{{ name }}', {% endfor %}];
+            const cnt_review = {{ cnt_review }};
+            const labels2 = [{% for word in words %} '{{ word }}', {% endfor %}];
+            const cnt_word = {{ cnt_word }};
+            const labels3 = [{%for keyword in input_keywords %} '{{ keyword.keyword }}', {% endfor %}];
+            const cnt_keyword = [{%for keyword in input_keywords %} {{ keyword.count }}, {% endfor %}];
+        </script>
+        <script src="{% static 'js/chartconf.js'%}"></script>
+    </body>
+</html>

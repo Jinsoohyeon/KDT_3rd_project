@@ -1,0 +1,91 @@
+artifact_path: best_estimator
+flavors:
+  python_function:
+    env: conda.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    python_version: 3.8.8
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.1.1
+mlflow_version: 1.27.0
+model_uuid: e0a3ecc163a242cdbc1dd1500ca25f01
+run_id: ba23a177e0214f8a8a6ffe24f235cafc
+signature:
+  inputs: '[{"name": "\uac00\uc744", "type": "long"}, {"name": "\uac00\uc871", "type":
+    "long"}, {"name": "\uac08\ub9e4\uae30", "type": "long"}, {"name": "\uac15\ub989",
+    "type": "long"}, {"name": "\uac15\ucd0c", "type": "long"}, {"name": "\uac1c\uc6b8",
+    "type": "long"}, {"name": "\uac2f\ubc30", "type": "long"}, {"name": "\uaca8\uc6b8",
+    "type": "long"}, {"name": "\uaca8\uc6b8\uc5f0\uac00", "type": "long"}, {"name":
+    "\uacbd\uae30\ub3c4", "type": "long"}, {"name": "\uacbd\uce58", "type": "long"},
+    {"name": "\uacc4\uace1", "type": "long"}, {"name": "\uace8\ubaa9", "type": "long"},
+    {"name": "\uace8\uc9dc\uae30", "type": "long"}, {"name": "\uacf5\uc6d0", "type":
+    "long"}, {"name": "\uacf5\ud130", "type": "long"}, {"name": "\uad11\uc0b0", "type":
+    "long"}, {"name": "\uad50\ud1b5", "type": "long"}, {"name": "\uad6d\ub9bd\uacf5\uc6d0",
+    "type": "long"}, {"name": "\uae30\ub150\uad00", "type": "long"}, {"name": "\uae30\ucc28",
+    "type": "long"}, {"name": "\ub099\uc6d0", "type": "long"}, {"name": "\ub09a\uc2dc",
+    "type": "long"}, {"name": "\ub0a8\ud55c", "type": "long"}, {"name": "\ubd81\ud55c",
+    "type": "long"}, {"name": "\ub0a8\ubd81\ud55c", "type": "long"}, {"name": "\ub178\ub780\uc0c9",
+    "type": "long"}, {"name": "\ub179\uc0c9", "type": "long"}, {"name": "\ub179\uc9c0",
+    "type": "long"}, {"name": "\ub18d\uc7a5", "type": "long"}, {"name": "\ub208",
+    "type": "long"}, {"name": "\ub2e4\ub9ac", "type": "long"}, {"name": "\ub2e8\ud48d",
+    "type": "long"}, {"name": "\ub2ed", "type": "long"}, {"name": "\ub2ed\uac15\uc815",
+    "type": "long"}, {"name": "\ub2f9\uc77c\uce58\uae30", "type": "long"}, {"name":
+    "\ub300\ub098\ubb34", "type": "long"}, {"name": "\ub310", "type": "long"}, {"name":
+    "\ub3d9\uad74", "type": "long"}, {"name": "\ub3d9\ubb3c", "type": "long"}, {"name":
+    "\ub3d9\uc2dd\ubb3c", "type": "long"}, {"name": "\ub3d9\ud574", "type": "long"},
+    {"name": "\ub4dc\ub77c\ub9c8", "type": "long"}, {"name": "\ub4dc\ub77c\uc774\ube0c",
+    "type": "long"}, {"name": "\ub4f1\uc0b0", "type": "long"}, {"name": "\ub4f1\ub300",
+    "type": "long"}, {"name": "\ub514\uc800\ud2b8", "type": "long"}, {"name": "\ub798\ud504\ud305",
+    "type": "long"}, {"name": "\ub808\uc77c\ubc14\uc774\ud06c", "type": "long"}, {"name":
+    "\ub9ac\uc870\ud2b8", "type": "long"}, {"name": "\ub9c8\uc744", "type": "long"},
+    {"name": "\ub9c9\uad6d\uc218", "type": "long"}, {"name": "\ub9c9\uac78\ub9ac",
+    "type": "long"}, {"name": "\ub9dd\uc6d0\uacbd", "type": "long"}, {"name": "\uba54\ubc00",
+    "type": "long"}, {"name": "\ubaa8\ub798", "type": "long"}, {"name": "\ubb38\uc5b4",
+    "type": "long"}, {"name": "\ubb38\ud654\uc81c", "type": "long"}, {"name": "\ubb3c\uace0\uae30",
+    "type": "long"}, {"name": "\ubc14\ub2e4", "type": "long"}, {"name": "\ubc14\ub2e4\uc0c9",
+    "type": "long"}, {"name": "\ubc14\ub78c", "type": "long"}, {"name": "\ubc14\ube44\ud050",
+    "type": "long"}, {"name": "\ubc14\uc704", "type": "long"}, {"name": "\ubc15\ubb3c\uad00",
+    "type": "long"}, {"name": "\ubc30\uacbd", "type": "long"}, {"name": "\ubc88\ud654\uac00",
+    "type": "long"}, {"name": "\ubc9a\uaf43", "type": "long"}, {"name": "\ubcf4\ub77c\uc0c9",
+    "type": "long"}, {"name": "\ubd04", "type": "long"}, {"name": "\ubcf4\ud2b8",
+    "type": "long"}, {"name": "\ubd09\uc6b0\ub9ac", "type": "long"}, {"name": "\ubd80\ucc98\ub2d8",
+    "type": "long"}, {"name": "\ubd84\uacc4\uc120", "type": "long"}, {"name": "\uc0ac\uc6d0",
+    "type": "long"}, {"name": "\uc0bc\ucc99", "type": "long"}, {"name": "\uc11c\ube44\uc2a4",
+    "type": "long"}, {"name": "\uc11d\ud0c4", "type": "long"}, {"name": "\uc11d\ud68c\uc554",
+    "type": "long"}, {"name": "\uc120\uad50\uc7a5", "type": "long"}, {"name": "\uc12c",
+    "type": "long"}, {"name": "\uc18d\ucd08", "type": "long"}, {"name": "\uc218\ubaa9\uc6d0",
+    "type": "long"}, {"name": "\uc21c\ub300", "type": "long"}, {"name": "\uc21c\ub450\ubd80",
+    "type": "long"}, {"name": "\uc22f\ubd88", "type": "long"}, {"name": "\uc232",
+    "type": "long"}, {"name": "\uc2a4\ud0a4", "type": "long"}, {"name": "\uc2a4\ud3ec\uce20",
+    "type": "long"}, {"name": "\uc2dc\ub0c7\ubb3c", "type": "long"}, {"name": "\uc2dc\ub0b4",
+    "type": "long"}, {"name": "\uc2dd\ubb3c\uc6d0", "type": "long"}, {"name": "\uc544\ubc14\uc774",
+    "type": "long"}, {"name": "\uc544\ub4e4", "type": "long"}, {"name": "\uc544\ubc14\uc774\uc21c\ub300",
+    "type": "long"}, {"name": "\uc544\uc774", "type": "long"}, {"name": "\uc57c\uacbd",
+    "type": "long"}, {"name": "\uc591", "type": "long"}, {"name": "\uc5b4\ub978",
+    "type": "long"}, {"name": "\uc5ec\ub984", "type": "long"}, {"name": "\uc5ec\ud589",
+    "type": "long"}, {"name": "\uc5f0\uc778", "type": "long"}, {"name": "\uc5fc\uc18c",
+    "type": "long"}, {"name": "\uc624\uc9d5\uc5b4", "type": "long"}, {"name": "\uc624\uc9d5\uc5b4\uc21c\ub300",
+    "type": "long"}, {"name": "\uc625\uc218\uc218", "type": "long"}, {"name": "\uc625",
+    "type": "long"}, {"name": "\uc62c\ub9bc\ud53d", "type": "long"}, {"name": "\uc720\uc6d0\uc9c0",
+    "type": "long"}, {"name": "\uc720\uc544", "type": "long"}, {"name": "\uc740\ud589\ub098\ubb34",
+    "type": "long"}, {"name": "\uc778\uc0bc", "type": "long"}, {"name": "\uc77c\ucd9c",
+    "type": "long"}, {"name": "\uc790\uc791\ub098\ubb34", "type": "long"}, {"name":
+    "\uc790\uc804\uac70", "type": "long"}, {"name": "\uc7ac\ub798\uc2dc\uc7a5", "type":
+    "long"}, {"name": "\uc870\uac1c", "type": "long"}, {"name": "\uc885\uc720\uc11d",
+    "type": "long"}, {"name": "\ucd08\uc5ec\ub984", "type": "long"}, {"name": "\ucd08\ubaa9",
+    "type": "long"}, {"name": "\ucd08\ub85d\uc0c9", "type": "long"}, {"name": "\ucd98\ucc9c",
+    "type": "long"}, {"name": "\ucf54\uc2a4", "type": "long"}, {"name": "\ud14c\ub514\ubca0\uc5b4",
+    "type": "long"}, {"name": "\ud130\ubbf8\ub110", "type": "long"}, {"name": "\ud30c\ub780\uc0c9",
+    "type": "long"}, {"name": "\ud398\uc2a4\ud2f0\ubc8c", "type": "long"}, {"name":
+    "\ud3c9\ucc3d", "type": "long"}, {"name": "\ud3ed\ud3ec", "type": "long"}, {"name":
+    "\ud48d\uacbd", "type": "long"}, {"name": "\ud558\uc774\ud0b9", "type": "long"},
+    {"name": "\ud574\uc218\uc695\uc7a5", "type": "long"}, {"name": "\ud574\uc548",
+    "type": "long"}, {"name": "\ud638\uc218", "type": "long"}, {"name": "\ud63c\uc790",
+    "type": "long"}, {"name": "\ud654\uac15\uc554", "type": "long"}, {"name": "\ud734\uac00",
+    "type": "long"}, {"name": "\ud734\uc591\uc9c0", "type": "long"}, {"name": "\ud790\ub9c1",
+    "type": "long"}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+utc_time_created: '2022-07-11 18:56:19.718884'
