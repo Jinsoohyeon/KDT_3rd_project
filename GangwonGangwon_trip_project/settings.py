@@ -27,7 +27,7 @@ SECRET_KEY = my_settings.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['13.124.169.8']
+ALLOWED_HOSTS = ['3.38.95.166']
 
 
 # Application definition

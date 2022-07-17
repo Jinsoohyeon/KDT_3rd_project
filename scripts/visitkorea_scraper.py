@@ -5,40 +5,32 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 import os
+## Python이 실행될 때 DJANGO_SETTINGS_MODULE이라는 환경 변수에 현재 프로젝트의 settings.py파일 경로를 등록합니다.
+
+## 이제 장고를 가져와 장고 프로젝트를 사용할 수 있도록 환경을 만듭니다.
 import django
 from main.models import TripNews, NewsSummery
 from selenium.webdriver.common.by import By
 import requests
-from pyvirtualdisplay import Display
-
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "websaver.settings")
 django.setup()
 
-# driver 오류
-options = webdriver.ChromeOptions() # 크롬 옵션 객체 생성
-options.add_argument('headless') # headless 모드 설정
-options.add_argument("window-size=1920x1080") # 화면크기(전체화면)
-options.add_argument("disable-gpu") 
-options.add_argument("disable-infobars")
-options.add_argument("--disable-extensions")
-options.add_argument("lang=ko_KR") # 사용 언어
-# 속도 향상을 위한 옵션 해제
-prefs = {'profile.default_content_setting_values': {'cookies' : 2, 'images': 2, 'plugins' : 2, 'popups': 2, 'geolocation': 2, 'notifications' : 2, 'auto_select_certificate': 2, 'fullscreen' : 2, 'mouselock' : 2, 'mixed_script': 2, 'media_stream' : 2, 'media_stream_mic' : 2, 'media_stream_camera': 2, 'protocol_handlers' : 2, 'ppapi_broker' : 2, 'automatic_downloads': 2, 'midi_sysex' : 2, 'push_messaging' : 2, 'ssl_cert_decisions': 2, 'metro_switch_to_desktop' : 2, 'protected_media_identifier': 2, 'app_banner': 2, 'site_engagement' : 2, 'durable_storage' : 2}}   
-options.add_experimental_option('prefs', prefs)
-# 가상 웹브라우저 설정
-display = Display(visible =0, size = (1024,768))
-# 가상 웹브라우저 실행
-display.start()
-# 하드웨어 가속 사용 여부
-# options.add_argument("disable-gpu")
+
 
 def run():
+    # slack 설정
+    # SLACK_BOT_TOKEN = "xoxb-3633493712596-3670945638306-Xmgav9nuup272bfxAfmhKCj6" # 앱 토큰
+    # # slack_token = WebClient(token=SLACK_BOT_TOKEN)
+    # slack_channel = "korea_visit_info_scraping" # 채녈명
+
+    # driver 오류
+    options = webdriver.ChromeOptions()
     options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
     url = "https://korean.visitkorea.or.kr/search/search_list.do?keyword="
     keyword = "강원도"
     search_url = url + keyword
-    driver = webdriver.Chrome("../chromedriver",options=options)
+    driver = webdriver.Chrome("C:/gitdoc/Gangwon_trip_project/chromedriver102.exe",options=options)
     driver.get(search_url)
 
     driver.find_element_by_css_selector(".search_menu li#tabView2").click()
@@ -73,6 +65,18 @@ def run():
             likeCnt = driver.find_element_by_css_selector("#conLike").text
             shareCnt = driver.find_element_by_css_selector("#conShare").text
             readCnt = driver.find_element_by_css_selector("#conRead").text
+            
+            
+            # slack으로 메세지 보내기
+            # message = f"{title}{date}"
+            # def post_message(token,channel,message):
+            #     response = requests.post("https://slack.com/api/chat.postMessage",
+            #     headers={"Authorization": "Bearer "+token},
+            #     data={"channel": channel,"text": message}
+            #     )
+            #     print(response)
+            
+            # post_message(SLACK_BOT_TOKEN,slack_channel,message)
 
             #요약보기
             try:
@@ -116,3 +120,7 @@ def run():
                     pass
     except Exception as e:
         print(e)
+
+# 변동사항
+# 요약글 for문에서 리스트로 받음
+# img url 인덱싱 변환
